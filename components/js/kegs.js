@@ -118,9 +118,8 @@ export function kegsStart() {
     let kegIMG = document.createElement("img");
     let beerLower = beertype.toLowerCase();
     let beerArray = beerLower.split(" ");
-    if (beerArray[0] == "hollaback") {
-      kegIMG.src = "beers_images_resized/" + beerArray[0] + ".png";
-    } else if (beerArray.length < 2) {
+
+    if (beerArray.length < 2) {
       kegIMG.src = "beers_images_resized/" + beerArray[0] + ".png";
     } else if (beerArray.length == 2) {
       kegIMG.src =

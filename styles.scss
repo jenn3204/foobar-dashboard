@@ -47,6 +47,11 @@ p {
   height: 100vh;
 }
 
+.dannie-img,
+.jonas-img,
+.peter-img {
+  transition: all 1s;
+}
 /*----------Background for dashboard for landscape---------------*/
 @media all and (orientation: landscape) {
   .dashboard_background {

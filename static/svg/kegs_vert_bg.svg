@@ -1,0 +1,65 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 796 967">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #655773;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-5 {
+        fill: url(#linear-gradient-4);
+      }
+
+      .cls-6 {
+        fill: #b1475d;
+      }
+
+      .cls-7 {
+        fill: #fff;
+      }
+
+      .cls-8 {
+        fill: url(#linear-gradient-5);
+      }
+
+      .cls-9 {
+        fill: url(#linear-gradient-6);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-815.51" y1="1282.6" x2="-815.51" y2="1280.42" gradientTransform="matrix(320, 0, 0, -82.6, 261363.5, 106030.6)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ea738c"/>
+      <stop offset="1" stop-color="#753a46"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-815.51" y1="1281.08" x2="-815.51" y2="1282.92" gradientTransform="matrix(319.81, 0, 0, -47.62, 261208.83, 61307.57)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3d395e"/>
+      <stop offset="1" stop-color="#27253b"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="-815.51" y1="1274.42" x2="-815.51" y2="1276.24" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-4" x1="-815.51" y1="1267.92" x2="-815.51" y2="1269.63" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-5" x1="-815.51" y1="1278.73" x2="-815.51" y2="1276.56" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-6" x1="-815.51" y1="1274.91" x2="-815.51" y2="1272.74" xlink:href="#linear-gradient"/>
+  </defs>
+  <title>kegs_vert_bg</title>
+  <rect id="Rectangle_561" data-name="Rectangle 561" class="cls-1" x="0.12" y="311.86" width="800" height="29.64"/>
+  <path id="Path_1003" data-name="Path 1003" class="cls-2" d="M0,23H800V211H0Z"/>
+  <path id="Path_1004" data-name="Path 1004" class="cls-3" d="M.12,311.43V211l799.88.13v101.7Z"/>
+  <path id="Path_1004-2" data-name="Path 1004" class="cls-4" d="M-.88,628.61V529l799.88.13V630Z"/>
+  <rect id="Rectangle_561-2" data-name="Rectangle 561" class="cls-1" x="-0.88" y="937.75" width="800" height="28.75"/>
+  <path id="Path_1004-3" data-name="Path 1004" class="cls-5" d="M-.88,937.42V844l799.88.12v94.6Z"/>
+  <path id="Path_1000" data-name="Path 1000" class="cls-6" d="M-.88.88l.06,24.68L799,25.14,799.12.73Z"/>
+  <ellipse id="Ellipse_2" data-name="Ellipse 2" class="cls-7" cx="393.46" cy="11.12" rx="19.66" ry="4.47"/>
+  <rect id="Rectangle_561-3" data-name="Rectangle 561" class="cls-1" x="-0.88" y="629.03" width="800" height="28.75"/>
+  <path id="Path_1003-2" data-name="Path 1003" class="cls-8" d="M-1,342H799V530H-1Z"/>
+  <path id="Path_1003-3" data-name="Path 1003" class="cls-9" d="M-1,658H799V846H-1Z"/>
+</svg>

@@ -135,7 +135,6 @@ export function kegsStart() {
     kegIMG.alt = beertype;
     kegIMG.classList.add("beer_label");
     kegIMG.id = "image" + number;
-    kegIMG.style.width = "60%";
     kegContainer.appendChild(kegIMG);
 
     // show the storage in the storage div

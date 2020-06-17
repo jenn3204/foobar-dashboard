@@ -20,12 +20,34 @@ let peterInherit = document.querySelector(".peter-img").getBoundingClientRect();
 let peterInheritTop = peterInherit.top + 20 + "px";
 let peterInheritLeft = peterInherit.left + "px";
 
+const bg = document.querySelector(".dashboard_background");
+const statusBg = document.querySelector("#status_background");
+
 function start() {
   console.log("start");
+
   getTap();
   kegsStart();
   orderNo();
   heroku.getData();
+
+  window.addEventListener("resize", checkScreensize);
+  if (window.innerWidth > window.innerHeight) {
+    bg.style.height = (window.innerWidth / 1282) * 568 + "px";
+    statusBg.style.height = (window.innerWidth / 1280) * 162 + "px";
+  } else {
+    bg.style.height = (window.innerWidth / 796) * 967 + "px";
+  }
+}
+
+function checkScreensize() {
+  if (window.innerWidth > window.innerHeight) {
+    bg.style.height = (window.innerWidth / 1282) * 568 + "px";
+    statusBg.style.height = (window.innerWidth / 1280) * 162 + "px";
+  } else {
+    bg.style.height = (window.innerWidth / 796) * 967 + "px";
+  }
+  console.log(window.innerWidth + bg.style.height + statusBg.style.height);
 }
 function orderNo() {
   fetch(foobarUrl, {

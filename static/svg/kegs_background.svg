@@ -1,0 +1,66 @@
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1280 567">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-3 {
+        fill: #d0566f;
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-5 {
+        fill: url(#linear-gradient-4);
+      }
+
+      .cls-6 {
+        fill: #655773;
+      }
+
+      .cls-7 {
+        fill: #b1475d;
+      }
+
+      .cls-8 {
+        fill: #fff;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-1298.13" y1="801.99" x2="-1298.13" y2="801.39" gradientTransform="matrix(1920, 0, 0, -213.51, 2493047, 171579.9)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ea738c"/>
+      <stop offset="1" stop-color="#753a46"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-1298.13" y1="801.56" x2="-1298.13" y2="800.87" gradientTransform="matrix(1920, 0, 0, -198.51, 2493047, 159206.9)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="-1298.13" y1="803.21" x2="-1298.13" y2="803.75" gradientTransform="matrix(1919.78, 0, 0, -113.9, 2492761.26, 92007.42)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3a3659"/>
+      <stop offset="1" stop-color="#242139"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="-1298.13" y1="802.29" x2="-1298.13" y2="802.9" gradientTransform="matrix(1919.78, 0, 0, -113.9, 2492761.26, 91634.42)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3d395e"/>
+      <stop offset="1" stop-color="#27253b"/>
+    </linearGradient>
+  </defs>
+  <title>kegs_background</title>
+  <g>
+    <path id="Path_961" data-name="Path 961" class="cls-1" d="M.14,297.67H1280.29v152.6H.14Z"/>
+    <path id="Path_139" data-name="Path 139" class="cls-2" d="M.14,41H1280.29V184H.14Z"/>
+    <path id="Path_129" data-name="Path 129" class="cls-3" d="M1248.14,450.26l1-409.22L1280.39-1V35.1l-.15,496.82Z"/>
+    <path id="Path_130" data-name="Path 130" class="cls-3" d="M31.59,451.24l.58-409.16L.14-.16.25,533.2Z"/>
+    <path id="Path_119" data-name="Path 119" class="cls-4" d="M-1.14,531l32.52-80.76L1248.14,450l32,81.63Z"/>
+    <path id="Path_128-2" data-name="Path 128-2" class="cls-5" d="M-1.14,264.44l32.52-80.76,1217.76.07,31,81.34Z"/>
+    <rect class="cls-6" x="-0.86" y="264.04" width="1281" height="36"/>
+    <rect class="cls-6" x="0.14" y="531.04" width="1281" height="36"/>
+    <path id="Path_120" data-name="Path 120" class="cls-7" d="M.14,0,32.14,42l1217-.38,31-41.92Z"/>
+    <ellipse id="Ellipse_1" data-name="Ellipse 1" class="cls-8" cx="286.51" cy="16.8" rx="17.35" ry="3.93"/>
+    <ellipse id="Ellipse_2" data-name="Ellipse 2" class="cls-8" cx="991.97" cy="13.23" rx="17.35" ry="3.93"/>
+    <ellipse id="Ellipse_3" data-name="Ellipse 3" class="cls-8" cx="520.77" cy="16.8" rx="17.35" ry="3.93"/>
+    <ellipse id="Ellipse_4" data-name="Ellipse 4" class="cls-8" cx="757.04" cy="13.23" rx="17.35" ry="3.93"/>
+  </g>
+</svg>

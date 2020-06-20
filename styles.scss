@@ -47,6 +47,10 @@ p {
   height: 100vh;
 }
 
+// .bartender-status {
+//   position: relative;
+// }
+
 .dannie-img,
 .jonas-img,
 .peter-img {
@@ -80,7 +84,8 @@ p {
   /*------order screen for landscape-------*/
   .orders-no {
     position: absolute;
-    top: 80%;
+    // top: 80%;
+    bottom: 10px;
     left: 25%;
     width: 15vw;
     height: 10vw;
@@ -91,7 +96,8 @@ p {
   }
   .bartender-status {
     position: absolute;
-    top: 80%;
+    // top: 80%;
+    bottom: 10px;
     left: 65%;
     width: 28%;
     height: 10vw;
@@ -101,6 +107,25 @@ p {
     text-align: center;
     background-size: contain;
   }
+
+  .dannie-img {
+    position: fixed;
+    left: 68%;
+    bottom: 15px;
+  }
+
+  .jonas-img {
+    position: fixed;
+    left: 76%;
+    bottom: 15px;
+  }
+
+  .peter-img {
+    position: fixed;
+    left: 84%;
+    bottom: 15px;
+  }
+
   .bartender-status img {
     width: 3.8vw;
   }
@@ -126,8 +151,9 @@ p {
 
   .orders-no {
     position: absolute;
-    top: 85%;
+    // top: 85%;
     left: 5%;
+    bottom: 10px;
     width: 30vw;
     height: 20vw;
     background-color: $dark-boxes;
@@ -137,8 +163,9 @@ p {
   }
   .bartender-status {
     position: absolute;
-    top: 85%;
+    // top: 85%;
     left: 45%;
+    bottom: 10px;
     width: 50%;
     height: 20vw;
     background-color: $dark-boxes;
@@ -146,6 +173,24 @@ p {
     box-shadow: 10px 10px 0px 0px rgba(26, 38, 44, 1);
     text-align: center;
     background-size: contain;
+  }
+
+  .dannie-img {
+    position: fixed;
+    left: 50%;
+    bottom: 15px;
+  }
+
+  .jonas-img {
+    position: fixed;
+    left: 65%;
+    bottom: 15px;
+  }
+
+  .peter-img {
+    position: fixed;
+    left: 80%;
+    bottom: 15px;
   }
   .bartender img {
     width: 6vw;

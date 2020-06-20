@@ -87,187 +87,67 @@
   }
 }
 
-// @media only screen and (min-width: 350px) {
-//   #kegs_container {
-//     top: 18%;
-//     grid-template-columns: 1fr 1fr 1fr;
-//   }
-//   .keg {
-//     width: 20vw;
-//   }
-// }
-// @media only screen and (min-width: 700px) {
-//   #kegs_container {
-//     top: 15px;
-//     grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr));
-//   }
-//   .keg {
-//     width: 9.5vw;
-//   }
-// }
+/*** media queries ***/
 
-// @media only screen and (min-width: 900px) {
-//   #kegs_container {
-//     grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr));
-//     grid-gap: 60px 0;
-//     top: 150px;
-//     left: 2vw;
-//   }
-//   .keg {
-//     width: 10vw;
-//   }
-// }
+@media only screen and (min-width: 350px) {
+  #kegs_container {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 100px), 1fr));
+    left: 7vw;
+    grid-gap: 70px 0;
+  }
+}
 
-// @media only screen and (min-width: 900px) and (max-height: 800px) {
-//   #kegs_container {
-//     grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr));
-//     grid-gap: 40px 0;
-//     top: 90px;
-//   }
-// }
-// @media only screen and (min-width: 1200px) {
-//   #kegs_container {
-//     grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
-//     grid-gap: 60px 0;
-//     top: 130px;
-//     left: 100px;
-//   }
-// }
+@media only screen and (min-width: 550px) {
+  #kegs_container {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 120px), 1fr));
+    grid-gap: 80px 0;
+    top: 30px;
+  }
 
-// @media only screen and (min-width: 1200px) and (max-height: 700px) {
-//   #kegs_container {
-//     grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
-//     grid-gap: 60px 0;
-//     top: 60px;
-//   }
-// }
+  .beer_label {
+    top: 40px;
+    width: 60%;
+    left: 20%;
+  }
+}
 
-// @media only screen and (min-width: 1500px) {
-//   #kegs_container {
-//     grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
-//     grid-gap: 100px 0;
-//     top: 100px;
-//   }
-// }
+@media only screen and (min-width: 650px) {
+  #kegs_container {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  }
+}
 
-// @media only screen and (min-width: 700px) {
-//   #kegs_container {
-//     grid-template-columns: 1fr 1fr 1fr 1fr;
-//     margin: 150px auto;
-//   }
-// }
+@media only screen and (orientation: landscape) and (min-width: 400px) {
+  #kegs_container {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 120px), 1fr));
+    grid-gap: 50px 0;
+    top: 15px;
+  }
 
-// @media only screen and (min-width: 800px) {
-//   .keg {
-//     width: 130px;
-//   }
+  .keg {
+    width: 80px;
+  }
+}
 
-//   #kegs_container {
-//     grid-template-columns: 1fr 1fr 1fr 1fr;
-//     margin: 90px auto;
-//   }
-// }
+@media only screen and (orientation: landscape) and (min-width: 900px) {
+  #kegs_container {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+    top: 20px;
+  }
 
-// @media only screen and (min-width: 1000px) {
-//   #kegs_container {
-//     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-//     margin: 70px auto;
-//   }
-// }
+  .keg {
+    width: 120px;
+  }
+}
 
-// @media all and (orientation: portrait) {
-//   .keg {
-//     width: 75%;
-//     // margin-left: 7vw;
-//     // margin-top: -4vw;
-//     // margin-bottom: 13vw;
-//   }
+@media only screen and (orientation: landscape) and (min-width: 1100px) {
+  #kegs_container {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    top: 50px;
+    grid-gap: 80px 0;
+  }
 
-//   #kegs_container {
-//     grid-template-columns: 1fr 1fr 1fr;
-//     margin: 65px auto;
-//     width: 80%;
-//     grid-gap: 40px 0;
-//   }
-// }
-
-// @media all and (orientation: landscape) {
-//   .keg {
-//     width: 80px;
-//     margin-top: 4vw;
-//     margin-left: 5vw;
-//   }
-
-//   #kegs_container {
-//     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-//     width: 90%;
-//   }
-// }
-
-// @media only screen and (min-width: 800px) {
-//   #kegs_container {
-//     margin: 140px auto;
-//   }
-// }
-
-// @media only screen and (min-width: 900px) {
-//   .keg {
-//     width: 100px;
-//   }
-
-//   #kegs_container {
-//     margin: 120px auto;
-//   }
-// }
-
-// @media only screen and (min-width: 1000px) {
-//   .keg {
-//     width: 120px;
-//   }
-
-//   #kegs_container {
-//     margin: 80px auto;
-//   }
-// }
-
-// @media only screen and (min-width: 1500px) {
-//   .keg {
-//     width: 170px;
-//   }
-
-//   #kegs_container {
-//     max-width: 1500px;
-//     width: 80%;
-//     margin: 100px auto;
-//     grid-gap: 100px 0;
-//     grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-//   }
-// }
-
-// @media only screen and (max-height: 700px) and (min-width: 300px) {
-//   #kegs_container {
-//     margin: 30px auto;
-//     grid-gap: 40px 0;
-//   }
-// }
-
-// @media only screen and (max-height: 700px) and (min-width: 690px) {
-//   #kegs_container {
-//     margin: 130px auto;
-//     grid-gap: 20px 0;
-//   }
-// }
-
-// @media only screen and (max-height: 700px) and (min-width: 900px) {
-//   #kegs_container {
-//     margin: 70px auto;
-//     grid-gap: 20px 0;
-//   }
-// }
-
-// @media only screen and (max-height: 700px) and (min-width: 1000px) {
-//   #kegs_container {
-//     margin: 20px auto;
-//     grid-gap: 20px 0;
-//   }
-// }
+  .keg {
+    width: 130px;
+  }
+}

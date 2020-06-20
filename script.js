@@ -6,19 +6,19 @@ import { heroku } from "./components/js/heroku";
 import { kegsStart } from "./components/js/kegs";
 import { foobarUrl, beertypesUrl, orderUrl } from "./components/js/vars";
 
-let dannieInherit = document
-  .querySelector(".dannie-img")
-  .getBoundingClientRect();
-let dannieInheritTop = dannieInherit.top + 20 + "px";
-let dannieInheritLeft = dannieInherit.left + "px";
+// let dannieInherit = document
+//   .querySelector(".dannie-img")
+//   .getBoundingClientRect();
+// let dannieInheritTop = dannieInherit.top + 20 + "px";
+// let dannieInheritLeft = dannieInherit.left + "px";
 
-let jonasInherit = document.querySelector(".jonas-img").getBoundingClientRect();
-let jonasInheritTop = jonasInherit.top + 20 + "px";
-let jonasInheritLeft = jonasInherit.left + "px";
+// let jonasInherit = document.querySelector(".jonas-img").getBoundingClientRect();
+// let jonasInheritTop = jonasInherit.top + 20 + "px";
+// let jonasInheritLeft = jonasInherit.left + "px";
 
-let peterInherit = document.querySelector(".peter-img").getBoundingClientRect();
-let peterInheritTop = peterInherit.top + 20 + "px";
-let peterInheritLeft = peterInherit.left + "px";
+// let peterInherit = document.querySelector(".peter-img").getBoundingClientRect();
+// let peterInheritTop = peterInherit.top + 20 + "px";
+// let peterInheritLeft = peterInherit.left + "px";
 
 const bg = document.querySelector(".dashboard_background");
 const statusBg = document.querySelector("#status_background");
@@ -99,23 +99,38 @@ function tapNo(tap) {
     if (currentBeer) {
       let currentBeerPos = currentBeer.getBoundingClientRect();
 
-      bartenderHead.style.position = "fixed";
-      bartenderHead.style.top =
-        currentBeerPos.top + currentBeerPos.height - 70 + "px";
+      // bartenderHead.style.position = "fixed";
+      // bartenderHead.style.top =
+      //   currentBeerPos.top + currentBeerPos.height - 70 + "px";
+      bartenderHead.style.bottom =
+        window.innerHeight - currentBeerPos.top - currentBeerPos.height + "px";
       bartenderHead.style.left =
         currentBeerPos.left + currentBeerPos.width - 30 + "px";
     } else {
-      bartenderHead.style.position = "fixed";
-
       if (name == "dannie") {
-        document.querySelector(".dannie-img").style.top = dannieInheritTop;
-        document.querySelector(".dannie-img").style.left = dannieInheritLeft;
+        if (window.innerHeight > window.innerWidth) {
+          document.querySelector(".dannie-img").style.bottom = "15px";
+          document.querySelector(".dannie-img").style.left = "50%";
+        } else {
+          document.querySelector(".dannie-img").style.bottom = "15px";
+          document.querySelector(".dannie-img").style.left = "68%";
+        }
       } else if (name == "jonas") {
-        document.querySelector(".jonas-img").style.top = jonasInheritTop;
-        document.querySelector(".jonas-img").style.left = jonasInheritLeft;
+        if (window.innerHeight > window.innerWidth) {
+          document.querySelector(".jonas-img").style.bottom = "15px";
+          document.querySelector(".jonas-img").style.left = "65%";
+        } else {
+          document.querySelector(".jonas-img").style.bottom = "15px";
+          document.querySelector(".jonas-img").style.left = "76%";
+        }
       } else if (name == "peter") {
-        document.querySelector(".peter-img").style.top = peterInheritTop;
-        document.querySelector(".peter-img").style.left = peterInheritLeft;
+        if (window.innerHeight > window.innerWidth) {
+          document.querySelector(".peter-img").style.bottom = "15px";
+          document.querySelector(".peter-img").style.left = "80%";
+        } else {
+          document.querySelector(".peter-img").style.bottom = "15px";
+          document.querySelector(".peter-img").style.left = "84%";
+        }
       }
     }
   });

@@ -9,7 +9,7 @@ export function kegsStart() {
   // fetch the data every 3 seconds to keep the dashboard updated
   setInterval(() => {
     heroku.getData(dataForKegs);
-  }, 3000);
+  }, 1000);
 
   function dataForSvgs(data) {
     // calling the function to fetch the svg files, the keg svg and the tap svg and send it to place function
@@ -57,6 +57,12 @@ export function kegsStart() {
     kegStorage.classList.add("storage");
     kegStorage.id = "storage" + number;
     kegContainer.appendChild(kegStorage);
+
+    // create the img tag for the beer label
+    let kegImage = document.createElement("img");
+    kegImage.classList.add("beer_label");
+    kegImage.id = "image" + number;
+    kegContainer.appendChild(kegImage);
   }
 
   function placeTaps(svg, data) {
@@ -106,21 +112,14 @@ export function kegsStart() {
   }
 
   function showData(number, beertype, storage, level, category) {
-    // the kegContainer should be the article with the id matching this taps id
-    let kegContainer = document.querySelector(`#container${number}`);
+    // putting the right image in the img tag
 
-    //if image/label is already there, remove it (this is because of the updating part (calling this function every 3 seconds) so we don't have multiple pictures)
-    if (document.querySelector(`#image${number}`)) {
-      document.querySelector(`#image${number}`).remove();
-    }
-
-    // creating an img showing the label of the beer in this tap (for each tap)
-    let kegIMG = document.createElement("img");
+    let kegIMG = document.querySelector(`#image${number}`);
     let beerLower = beertype.toLowerCase();
     let beerArray = beerLower.split(" ");
 
     if (beerArray.length < 2) {
-      kegIMG.src = "beers_images_resized/" + beerArray[0] + ".png";
+      kegIMG.src = "beers_images_compressed/" + beerArray[0] + ".png";
     } else if (beerArray.length == 2) {
       kegIMG.src =
         "beers_images_resized/" + beerArray[0] + beerArray[1] + ".png";
@@ -133,12 +132,17 @@ export function kegsStart() {
         ".png";
     }
     kegIMG.alt = beertype;
-    kegIMG.classList.add("beer_label");
-    kegIMG.id = "image" + number;
-    kegContainer.appendChild(kegIMG);
 
     // show the storage in the storage div
     document.querySelector(`#storage${number}`).textContent = storage;
+
+    // adding a class with transition on the beer in the keg
+    document
+      .querySelector(`#keg${number} #Rectangle_174`)
+      .classList.add("beer_trans");
+    document
+      .querySelector(`#keg${number} #Rectangle_173`)
+      .classList.add("beer_trans");
 
     // if the storage is 0 the number should be blinking red to alarm the staff that they are running out of beer
     if (storage == "0") {
@@ -160,7 +164,19 @@ export function kegsStart() {
         .classList.remove("blinking_red");
     }
 
-    if (level < 2000 && level > 1000) {
+    if (level < 2000 && level > 1500) {
+      document.querySelector(`#keg${number} #Rectangle_174`).style.y = "100";
+      document.querySelector(`#keg${number} #Rectangle_174`).style.height =
+        "100";
+      document.querySelector(`#keg${number} #Rectangle_173`).style.height =
+        "140";
+      document.querySelector(`#keg${number} #Rectangle_173`).style.y = "140";
+      document
+        .querySelector(`#keg${number} #Rectangle_172`)
+        .classList.remove("blinking_red");
+    }
+
+    if (level < 1500 && level > 1000) {
       document.querySelector(`#keg${number} #Rectangle_174`).style.y = "150";
       document.querySelector(`#keg${number} #Rectangle_174`).style.height =
         "70";
@@ -186,7 +202,9 @@ export function kegsStart() {
 
     if (level < 200) {
       document.querySelector(`#keg${number} #Rectangle_174`).style.height = "0";
+      document.querySelector(`#keg${number} #Rectangle_174`).style.y = "270";
       document.querySelector(`#keg${number} #Rectangle_173`).style.height = "0";
+      document.querySelector(`#keg${number} #Rectangle_173`).style.y = "270";
       document
         .querySelector(`#keg${number} #Rectangle_172`)
         .classList.add("blinking_red");

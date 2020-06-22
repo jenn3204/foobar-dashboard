@@ -6,20 +6,6 @@ import { heroku } from "./components/js/heroku";
 import { kegsStart } from "./components/js/kegs";
 import { foobarUrl, beertypesUrl, orderUrl } from "./components/js/vars";
 
-// let dannieInherit = document
-//   .querySelector(".dannie-img")
-//   .getBoundingClientRect();
-// let dannieInheritTop = dannieInherit.top + 20 + "px";
-// let dannieInheritLeft = dannieInherit.left + "px";
-
-// let jonasInherit = document.querySelector(".jonas-img").getBoundingClientRect();
-// let jonasInheritTop = jonasInherit.top + 20 + "px";
-// let jonasInheritLeft = jonasInherit.left + "px";
-
-// let peterInherit = document.querySelector(".peter-img").getBoundingClientRect();
-// let peterInheritTop = peterInherit.top + 20 + "px";
-// let peterInheritLeft = peterInherit.left + "px";
-
 const bg = document.querySelector(".dashboard_background");
 const statusBg = document.querySelector("#status_background");
 
@@ -31,16 +17,13 @@ function start() {
   orderNo();
   heroku.getData();
 
+  //calling the checkScreenSize function to set the height of the background svgs and then calls this function everytime the screensize changes
+  checkScreensize();
   window.addEventListener("resize", checkScreensize);
-  if (window.innerWidth > window.innerHeight) {
-    bg.style.height = (window.innerWidth / 1282) * 568 + "px";
-    statusBg.style.height = (window.innerWidth / 1280) * 162 + "px";
-  } else {
-    bg.style.height = (window.innerWidth / 796) * 967 + "px";
-  }
 }
 
 function checkScreensize() {
+  // this function is added to improve responsivity, as the background svgs are 100vw width, the height needs to match the width at every screen size
   if (window.innerWidth > window.innerHeight) {
     bg.style.height = (window.innerWidth / 1282) * 568 + "px";
     statusBg.style.height = (window.innerWidth / 1280) * 162 + "px";
@@ -49,7 +32,9 @@ function checkScreensize() {
   }
   console.log(window.innerWidth + bg.style.height + statusBg.style.height);
 }
+
 function orderNo() {
+  //gets data and sends to orderNumber function
   fetch(foobarUrl, {
     method: "get",
     headers: {
@@ -61,6 +46,7 @@ function orderNo() {
 }
 
 function getTap() {
+  // gets data and sends to tapNo function
   fetch(foobarUrl, {
     method: "get",
     headers: {
@@ -79,11 +65,12 @@ function tapNo(tap) {
   const jonas = document.querySelector(".jonas-img");
   const peter = document.querySelector(".peter-img");
 
-  //trying to dry it up
+  //looping through the array of bartenders
   bartenders.forEach((bartender) => {
     let name = bartender.name.toLowerCase();
     let bartenderHead = document.querySelector(`.${name}-img`);
 
+    // putting the right text and number at each of the bartenders, to show which tap theyre using or if they are not using a tap
     document.querySelector(`.${name}`).innerHTML =
       "Using tap <br>" + bartender.usingTap;
 
@@ -94,138 +81,48 @@ function tapNo(tap) {
       bartenderHead.style.filter = "grayscale(0%)";
     }
 
+    // the currentBeer is the beer with the a container with the id matcking this id
     let currentBeer = document.querySelector(`#container${bartender.usingTap}`);
 
     if (currentBeer) {
+      // if the bartender is using a tap, his head moves to the position of the tap
       let currentBeerPos = currentBeer.getBoundingClientRect();
 
-      // bartenderHead.style.position = "fixed";
-      // bartenderHead.style.top =
-      //   currentBeerPos.top + currentBeerPos.height - 70 + "px";
       bartenderHead.style.bottom =
         window.innerHeight - currentBeerPos.top - currentBeerPos.height + "px";
       bartenderHead.style.left =
         currentBeerPos.left + currentBeerPos.width - 30 + "px";
     } else {
+      // if the bartender is not using a tap, his head moves to the bartender box in his original position
       if (name == "dannie") {
         if (window.innerHeight > window.innerWidth) {
-          document.querySelector(".dannie-img").style.bottom = "15px";
-          document.querySelector(".dannie-img").style.left = "50%";
+          dannie.style.bottom = "15px";
+          dannie.style.left = "50%";
         } else {
-          document.querySelector(".dannie-img").style.bottom = "15px";
-          document.querySelector(".dannie-img").style.left = "68%";
+          dannie.style.bottom = "15px";
+          dannie.style.left = "68%";
         }
       } else if (name == "jonas") {
         if (window.innerHeight > window.innerWidth) {
-          document.querySelector(".jonas-img").style.bottom = "15px";
-          document.querySelector(".jonas-img").style.left = "65%";
+          jonas.style.bottom = "15px";
+          jonas.style.left = "65%";
         } else {
-          document.querySelector(".jonas-img").style.bottom = "15px";
-          document.querySelector(".jonas-img").style.left = "76%";
+          jonas.style.bottom = "15px";
+          jonas.style.left = "76%";
         }
       } else if (name == "peter") {
         if (window.innerHeight > window.innerWidth) {
-          document.querySelector(".peter-img").style.bottom = "15px";
-          document.querySelector(".peter-img").style.left = "80%";
+          peter.style.bottom = "15px";
+          peter.style.left = "80%";
         } else {
-          document.querySelector(".peter-img").style.bottom = "15px";
-          document.querySelector(".peter-img").style.left = "84%";
+          peter.style.bottom = "15px";
+          peter.style.left = "84%";
         }
       }
     }
   });
 
-  //finding usingTap in the array for each bartender
-  // document.querySelector(".dannie").innerHTML =
-  //   "Using tap <br>" + bartender[2].usingTap;
-  // document.querySelector(".jonas").innerHTML =
-  //   "Using tap <br>" + bartender[1].usingTap;
-  // document.querySelector(".peter").innerHTML =
-  //   "Using tap <br>" + bartender[0].usingTap;
-  // //if/else statement for when the tap = null, add grayscale effect
-  // if (bartender[2].usingTap == null) {
-  //   dannie.style.filter = "grayscale(100%)";
-  //   document.querySelector(".dannie").innerHTML = "Available";
-  // } else {
-  //   dannie.style.filter = "grayscale(0%)";
-  // }
-  // if (bartender[1].usingTap == null) {
-  //   jonas.style.filter = "grayscale(100%)";
-  //   document.querySelector(".jonas").innerHTML = "Available";
-  // } else {
-  //   jonas.style.filter = "grayscale(0%)";
-  // }
-  // if (bartender[0].usingTap == null) {
-  //   peter.style.filter = "grayscale(100%)";
-  //   document.querySelector(".peter").innerHTML = "Available";
-  // } else {
-  //   peter.style.filter = "grayscale(0%)";
-  // }
-
-  // //animation of heads
-  // setTimeout(() => {
-  //   //Dannie
-  //   let dannieCurrent = document.querySelector(
-  //     `#container${bartender[2].usingTap}`
-  //   );
-
-  //   if (dannieCurrent) {
-  //     let currentPos = dannieCurrent.getBoundingClientRect();
-  //     console.log("dannie" + dannieCurrent.offsetTop + " " + currentPos.left);
-
-  //     document.querySelector(".dannie-img").style.position = "fixed";
-  //     document.querySelector(".dannie-img").style.top =
-  //       currentPos.top + currentPos.height - 70 + "px";
-  //     document.querySelector(".dannie-img").style.left =
-  //       currentPos.left + currentPos.width - 30 + "px";
-  //   } else {
-  //     document.querySelector(".dannie-img").style.position = "fixed";
-  //     document.querySelector(".dannie-img").style.top = dannieInheritTop;
-  //     document.querySelector(".dannie-img").style.left = dannieInheritLeft;
-  //   }
-
-  //   //Jonas
-  //   let jonasCurrent = document.querySelector(
-  //     `#container${bartender[1].usingTap}`
-  //   );
-
-  //   if (jonasCurrent) {
-  //     let currentPos1 = jonasCurrent.getBoundingClientRect();
-
-  //     document.querySelector(".jonas-img").style.position = "fixed";
-  //     document.querySelector(".jonas-img").style.top = currentPos1.top + "px";
-  //     document.querySelector(".jonas-img").style.left = currentPos1.left + "px";
-  //   } else {
-  //     document.querySelector(".jonas-img").style.position = "fixed";
-  //     document.querySelector(".jonas-img").style.top = jonasInheritTop;
-  //     document.querySelector(".jonas-img").style.left = jonasInheritLeft;
-  //   }
-
-  //   //Peter
-  //   let peterCurrent = document.querySelector(
-  //     `#container${bartender[0].usingTap}`
-  //   );
-
-  //   if (peterCurrent) {
-  //     let currentPos2 = peterCurrent.getBoundingClientRect();
-
-  //     document.querySelector(".peter-img").style.position = "fixed";
-  //     document.querySelector(".peter-img").style.top = currentPos2.top + "px";
-  //     document.querySelector(".peter-img").style.left = currentPos2.left + "px";
-  //   } else {
-  //     document.querySelector(".peter-img").style.position = "fixed";
-  //     document.querySelector(".peter-img").style.top = peterInheritTop;
-  //     document.querySelector(".peter-img").style.left = peterInheritLeft;
-  //   }
-  // }, 10);
-
-  // // if (dannieCurrent !== "null") {
-  // //   let where = dannieCurrent.getBoundingClientRect();
-  // //   console.log("left" + where.left);
-  // // }
-
-  // // console.log(bartender[2].usingTap);
-  // //setting interval to reset the data evert 10 secs
+  //calling getTap function every second to keef the data updated
   setInterval(getTap(), 1000);
 }
 

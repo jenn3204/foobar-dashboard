@@ -47,14 +47,23 @@ p {
   height: 100vh;
 }
 
-// .bartender-status {
-//   position: relative;
-// }
+.happy_bartender {
+  animation: happy 0.5s infinite linear;
+}
+
+@keyframes happy {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(1px);
+  }
+}
 
 .dannie-img,
 .jonas-img,
 .peter-img {
-  transition: all 1s;
+  transition: all 1s ease-out;
 }
 /*----------Background for dashboard for landscape---------------*/
 @media all and (orientation: landscape) {

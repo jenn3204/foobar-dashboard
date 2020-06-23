@@ -4,12 +4,6 @@ const regeneratorRuntime = require("regenerator-runtime");
 export function kegsStart() {
   // calling the function to fetch the heroku data and send it to dataForSvgs
   heroku.getData(dataForSvgs);
-  heroku.getData(dataForKegs);
-
-  // fetch the data every 3 seconds to keep the dashboard updated
-  setInterval(() => {
-    heroku.getData(dataForKegs);
-  }, 1000);
 
   function dataForSvgs(data) {
     // calling the function to fetch the svg files, the keg svg and the tap svg and send it to place function
@@ -62,6 +56,7 @@ export function kegsStart() {
     let kegImage = document.createElement("img");
     kegImage.classList.add("beer_label");
     kegImage.id = "image" + number;
+    kegImage.alt = "beer keg" + number;
     kegContainer.appendChild(kegImage);
   }
 
@@ -81,6 +76,11 @@ export function kegsStart() {
     kegTap.classList.add("keg_tap");
     kegTap.innerHTML = svg;
     kegContainer.appendChild(kegTap);
+
+    heroku.getData(dataForKegs);
+    setInterval(() => {
+      heroku.getData(dataForKegs);
+    }, 1000);
   }
 
   function dataForKegs(data) {
